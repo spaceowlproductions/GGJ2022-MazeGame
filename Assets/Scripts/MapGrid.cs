@@ -31,14 +31,7 @@ public class MapGrid : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(buildMap)
-        {
-            if(!mapBuilt)
-            {
-                BuildGrid();
-                mapBuilt = true;
-            }
-        }
+
     }
 
     void BuildGrid()
