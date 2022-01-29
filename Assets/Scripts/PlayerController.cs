@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
 
     CharacterController characterController;
 
+    public GameObject cam;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,5 +31,16 @@ public class PlayerController : MonoBehaviour
         Vector3 moveDirection = transform.TransformDirection(Vector3.forward);
 
         characterController.Move((moveDirection * vertical) * Time.deltaTime);
+    }
+
+    void UpdateCamera()
+    {
+        cam.transform.eulerAngles = transform.eulerAngles;
+        cam.transform.position = new Vector3(transform.position.x, cam.transform.position.y, transform.position.z);
+    }
+
+    private void LateUpdate()
+    {
+        UpdateCamera();
     }
 }
