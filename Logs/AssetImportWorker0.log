@@ -496,3 +496,4 @@ Received Import Request.
 Start importing Assets/3D Arts/pot1_whole.fbx using Guid(db05dd99557511f4e8a412417cf4b47c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '811899eb95c75c878257098747d0410a') in 0.025610 seconds 
   Import took 0.028949 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
