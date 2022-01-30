@@ -30,11 +30,16 @@ public class HeroController : MonoBehaviour
 
     public Animator anim;
 
+    bool runningStarted;
+
+    StudioEventEmitter eventEmitter;
+
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.SetDestination(goal.transform.position);
+        eventEmitter = GetComponent<StudioEventEmitter>();
 
         Think();
     }
@@ -44,19 +49,22 @@ public class HeroController : MonoBehaviour
     {
         if(Vector3.Distance(transform.position, player.transform.position) < fearDistance)
         {
-            StopAllCoroutines();
-
-            if (heroState != HeroState.Running && heroState != HeroState.Tired)
+            if (heroState == HeroState.Thinking || heroState == HeroState.Walking)
+            {
+                StopAllCoroutines();
                 Run();
+            }
+
         }
     }
 
     IEnumerator RunEnergy()
     {        
         float totalTime = 0;
-        while (totalTime <= Random.Range(runEnergy, runEnergy + 5))
+        float energy = Random.Range(runEnergy, runEnergy + 5);
+        while (totalTime <= energy)
         {
-            Debug.Log("Energy left = " + (runEnergy - totalTime));
+            Debug.Log("Energy left = " + (energy - totalTime));
             totalTime += Time.deltaTime;
             yield return null;
         }
@@ -85,6 +93,7 @@ public class HeroController : MonoBehaviour
     IEnumerator CatchBreath()
     {
         heroState = HeroState.Tired;
+        eventEmitter.SetParameter("Running", 0f);
 
         float totalTime = 0;
         while (totalTime <= breathPause)
@@ -135,6 +144,8 @@ public class HeroController : MonoBehaviour
 
         running = StartCoroutine(RunEnergy());
         anim.SetBool("Moving", true);
+
+        eventEmitter.SetParameter("Running", 1f);
     }
 
     public void Walk ()
