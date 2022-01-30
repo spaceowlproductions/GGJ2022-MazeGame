@@ -27,6 +27,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 8421
+--- !u!114 &-8392439953797729283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/enemyPanting/Running
+  m_EditorClassIdentifier: 
+  Name: Running
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3881601589
+    data2: 349891458
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-7662334659832680300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,10 +93,10 @@ MonoBehaviour:
   Path: Assets/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 637790929640000000
+  lastModified: 637791493748071967
   FileSizes:
   - Name: 
-    Value: 1366
+    Value: 1540
   Exists: 1
 --- !u!114 &-5809299737464211945
 MonoBehaviour:
@@ -101,6 +125,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 29500
+--- !u!114 &-5600073032432689164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ambiance/Listening
+  m_EditorClassIdentifier: 
+  Name: Listening
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3536513517
+    data2: 4144119900
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-4727878476834543888
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +200,33 @@ MonoBehaviour:
   - Stone
   - Dirt
   Exists: 1
+--- !u!114 &-2635224532694150397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Cutscenes/Opening
+  m_EditorClassIdentifier: 
+  Path: event:/Cutscenes/Opening
+  Guid:
+    Data1: -1464227761
+    Data2: 1212365537
+    Data3: -478320211
+    Data4: 42455093
+  Banks:
+  - {fileID: -1139202111934652343}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-1139202111934652343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,7 +242,7 @@ MonoBehaviour:
   Path: Assets/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 637790929640000000
+  lastModified: 637791493748052032
   FileSizes: []
   Exists: 1
 --- !u!114 &11400000
@@ -191,8 +266,12 @@ MonoBehaviour:
   - {fileID: 3394927141140023888}
   - {fileID: 7617339572499734230}
   - {fileID: 1437796220987440605}
-  - {fileID: 1396357355890145681}
   - {fileID: -9070346091653600494}
+  - {fileID: 6428189363386589868}
+  - {fileID: 116717210338642381}
+  - {fileID: 6955795323724699845}
+  - {fileID: -2635224532694150397}
+  - {fileID: 5231826127055528541}
   EditorParameters:
   - {fileID: -4727878476834543888}
   - {fileID: -2667058369490870217}
@@ -200,9 +279,9 @@ MonoBehaviour:
   - {fileID: -1139202111934652343}
   StringsBanks:
   - {fileID: -7093712140780067941}
-  cacheTime: 637790929640000000
+  cacheTime: 637791493748071967
   cacheVersion: 10
---- !u!114 &1396357355890145681
+--- !u!114 &116717210338642381
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -216,19 +295,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Enemy Sounds/enemyPanting
   Guid:
-    Data1: -504932271
-    Data2: 1305278202
-    Data3: -1719401334
-    Data4: -1044416588
+    Data1: -912811208
+    Data2: 1129212354
+    Data3: 241958557
+    Data4: -62123176
   Banks:
   - {fileID: -1139202111934652343}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 7503931634904067838}
-  MinDistance: 1
-  MaxDistance: 20
+  - {fileID: -8392439953797729283}
+  MinDistance: 20
+  MaxDistance: 10000
   Length: 23900
 --- !u!114 &1437796220987440605
 MonoBehaviour:
@@ -298,10 +377,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Enemy Sounds/enemyFootsteps
   Guid:
-    Data1: -1291483532
-    Data2: 1234921183
-    Data3: 1398308231
-    Data4: -759266823
+    Data1: 718608580
+    Data2: 1120339746
+    Data3: 455016323
+    Data4: -1474363729
   Banks:
   - {fileID: -1139202111934652343}
   IsStream: 0
@@ -312,6 +391,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 530
+--- !u!114 &5231826127055528541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Cutscenes/Lose
+  m_EditorClassIdentifier: 
+  Path: event:/Cutscenes/Lose
+  Guid:
+    Data1: -1019508293
+    Data2: 1244383270
+    Data3: -949365856
+    Data4: -383894797
+  Banks:
+  - {fileID: -1139202111934652343}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &5509829408616174951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,11 +441,12 @@ MonoBehaviour:
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: -5600073032432689164}
   MinDistance: 1
   MaxDistance: 20
   Length: 101024
---- !u!114 &7503931634904067838
+--- !u!114 &6428189363386589868
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -348,21 +455,52 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/enemyPanting/Running
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/ListeningMusic
   m_EditorClassIdentifier: 
-  Name: Running
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 3881601589
-    data2: 349891458
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
+  Path: event:/ListeningMusic
+  Guid:
+    Data1: 1349601233
+    Data2: 1248053961
+    Data3: -65628510
+    Data4: 2113146353
+  Banks:
+  - {fileID: -1139202111934652343}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 8288527816314411331}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 50000
+--- !u!114 &6955795323724699845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Cutscenes/Win
+  m_EditorClassIdentifier: 
+  Path: event:/Cutscenes/Win
+  Guid:
+    Data1: 302417420
+    Data2: 1076846602
+    Data3: 119694753
+    Data4: 740964438
+  Banks:
+  - {fileID: -1139202111934652343}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 18815
 --- !u!114 &7617339572499734230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -391,3 +529,27 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 750
+--- !u!114 &8288527816314411331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/ListeningMusic/Listening
+  m_EditorClassIdentifier: 
+  Name: Listening
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3536513517
+    data2: 4144119900
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
