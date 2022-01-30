@@ -55,6 +55,14 @@ public class HeroController : MonoBehaviour
                 Run();
             }
 
+            float angle = 180;
+            if (Vector3.Angle(player.transform.forward, transform.position - player.transform.position) < angle)
+            {
+                anim.SetBool("Facing", true);
+            }
+            else
+                anim.SetBool("Facing", false);
+
         }
     }
 
@@ -94,6 +102,7 @@ public class HeroController : MonoBehaviour
     {
         heroState = HeroState.Tired;
         eventEmitter.SetParameter("Running", 0f);
+        anim.SetBool("Tired", true);
 
         float totalTime = 0;
         while (totalTime <= breathPause)
@@ -107,6 +116,8 @@ public class HeroController : MonoBehaviour
             Walk();
         else
             Think();
+
+        anim.SetBool("Tired", false);
         yield break;
     }
 
