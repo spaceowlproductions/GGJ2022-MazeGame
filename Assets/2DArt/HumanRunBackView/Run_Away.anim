@@ -21,15 +21,15 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: 30c6b44aa91b5422299004c5d46e86b4, type: 3}
-    - time: 0.25
+    - time: 0.16666667
       value: {fileID: 21300000, guid: 9e2add4f52f04489392d9271533a6f32, type: 3}
-    - time: 0.5
+    - time: 0.33333334
       value: {fileID: 21300000, guid: 204f6cb5779e44841a6b1e53cdf82304, type: 3}
-    - time: 0.75
+    - time: 0.5
       value: {fileID: 21300000, guid: c1225cda9f877409da5316bcc71dbb8d, type: 3}
-    - time: 1
+    - time: 0.6666667
       value: {fileID: 21300000, guid: 3b4a8a974da3d4e77a83251909c086bc, type: 3}
-    - time: 1.25
+    - time: 0.8333333
       value: {fileID: 21300000, guid: 7d68b45f5810b49b8a202549011064bc, type: 3}
     attribute: m_Sprite
     path: 
@@ -61,7 +61,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.3333334
+    m_StopTime: 0.9166666
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -88,7 +88,7 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 0.75
+  - time: 0.5
     functionName: Footstep
     data: 
     objectReferenceParameter: {fileID: 0}

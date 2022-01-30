@@ -252,6 +252,11 @@ public class GridUnit : MonoBehaviour
                     setMat = mapGrid.grassCorner;
                     setFloor.transform.eulerAngles = new Vector3(0, 90, 0);
                 }
+                else if (!northWall && !southWall && !eastWall && !westWall)
+                {
+                    setMat = mapGrid.grassOpen;
+                    setFloor.transform.eulerAngles = new Vector3(0, 0, 0);
+                }
                 break;
         }
         setFloor.GetComponent<Renderer>().material = setMat;
