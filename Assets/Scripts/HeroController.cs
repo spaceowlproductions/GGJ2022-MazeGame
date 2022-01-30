@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using FMODUnity;
+using UnityEngine.Playables;
 
 public class HeroController : MonoBehaviour
 {
@@ -34,6 +35,10 @@ public class HeroController : MonoBehaviour
 
     StudioEventEmitter eventEmitter;
 
+    public PlayableDirector cinematicDirector;
+    public PlayableAsset winScreen;
+
+    bool winPlaying;
     // Start is called before the first frame update
     void Start()
     {
@@ -62,6 +67,12 @@ public class HeroController : MonoBehaviour
             }
             else
                 anim.SetBool("Facing", false);
+
+            if(Vector3.Distance(transform.position, player.transform.position) < 5 && !winPlaying)
+            {
+                cinematicDirector.Play(winScreen);
+                winPlaying = true;
+            }
 
         }
     }
