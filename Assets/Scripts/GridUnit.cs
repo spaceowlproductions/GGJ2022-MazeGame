@@ -163,6 +163,11 @@ public class GridUnit : MonoBehaviour
                     setMat = mapGrid.dirtCorner;
                     setFloor.transform.eulerAngles = new Vector3(0, 90, 0);
                 }
+                else if(!northWall && !southWall && !eastWall && !westWall)
+                {
+                    setMat = mapGrid.dirtOpen;
+                    setFloor.transform.eulerAngles = new Vector3(0, 0, 0);
+                }
                 break;
 
             case FloorType.Cobblestone:

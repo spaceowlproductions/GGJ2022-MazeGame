@@ -19,9 +19,9 @@ public class MapGrid : MonoBehaviour
     public bool mapBuilt;
     public bool buildMap;
 
-    public Material cobbleIn, cobbleOut, cobbleThru, cobbleThruEW, cobbleAlone;
-    public Material dirtThru, dirtOne, dirtCorner, dirtEnd;
-    public Material grassThru, grassOne, grassCorner, grassEnd;
+    public Material cobbleIn, cobbleOut, cobbleThru, cobbleThruEW;
+    public Material dirtThru, dirtOne, dirtCorner, dirtEnd, dirtOpen;
+    public Material grassThru, grassOne, grassCorner, grassEnd, grassOpen;
 
     // Start is called before the first frame update
     void Start()

@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject cam;
 
+    public Animator anim;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +33,13 @@ public class PlayerController : MonoBehaviour
         Vector3 moveDirection = transform.TransformDirection(Vector3.forward);
 
         characterController.Move((moveDirection * vertical) * Time.deltaTime);
+
+        if (vertical > 0 || horizontal > 0)
+            anim.SetBool("Walking", true);
+        else
+        {
+            anim.SetBool("Walking", false);
+        }
     }
 
     void UpdateCamera()
