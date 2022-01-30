@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.Playables;
 
 public class ModeSwitcher : MonoBehaviour
 {
@@ -15,6 +16,12 @@ public class ModeSwitcher : MonoBehaviour
     SenseController senseController;
 
     bool dragging;
+
+    bool started;
+
+    public PlayableDirector cinematicDirector;
+    public PlayableAsset startScreen;
+
 
     // Start is called before the first frame update
     void Start()
@@ -74,8 +81,16 @@ public class ModeSwitcher : MonoBehaviour
         {
             if(switchType == SwitchType.Eyes)
                 senseController.SetSense("Eyes");
+
             else
+            {
                 senseController.SetSense("Ears");
+                if (!started)
+                {
+                    cinematicDirector.Play(startScreen);
+                    started = true;
+                }
+            }
         }
     }
 }

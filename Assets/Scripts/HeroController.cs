@@ -39,6 +39,14 @@ public class HeroController : MonoBehaviour
     public PlayableAsset winScreen;
 
     bool winPlaying;
+
+    public bool gameStarted;
+    bool started;
+
+    public GameObject music;
+
+    public float waitTime;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,34 +54,36 @@ public class HeroController : MonoBehaviour
         agent.SetDestination(goal.transform.position);
         eventEmitter = GetComponent<StudioEventEmitter>();
 
-        Think();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Vector3.Distance(transform.position, player.transform.position) < fearDistance)
+        if(gameStarted)
         {
-            if (heroState == HeroState.Thinking || heroState == HeroState.Walking)
+            if (Vector3.Distance(transform.position, player.transform.position) < fearDistance)
             {
-                StopAllCoroutines();
-                Run();
-            }
+                if (heroState == HeroState.Thinking || heroState == HeroState.Walking)
+                {
+                    StopAllCoroutines();
+                    Run();
+                }
 
-            float angle = 180;
-            if (Vector3.Angle(player.transform.forward, transform.position - player.transform.position) < angle)
-            {
-                anim.SetBool("Facing", true);
-            }
-            else
-                anim.SetBool("Facing", false);
+                float angle = 180;
+                if (Vector3.Angle(player.transform.forward, transform.position - player.transform.position) < angle)
+                {
+                    anim.SetBool("Facing", true);
+                }
+                else
+                    anim.SetBool("Facing", false);
 
-            if(Vector3.Distance(transform.position, player.transform.position) < 5 && !winPlaying)
-            {
-                cinematicDirector.Play(winScreen);
-                winPlaying = true;
-            }
+                if (Vector3.Distance(transform.position, player.transform.position) < 5 && !winPlaying)
+                {
+                    cinematicDirector.Play(winScreen);
+                    winPlaying = true;
+                }
 
+            }
         }
     }
 
@@ -208,5 +218,22 @@ public class HeroController : MonoBehaviour
         anim.SetBool("Moving", false);
     }
 
+    IEnumerator StartWait()
+    {
+        float totalTime = 0;
+        while (totalTime <= waitTime)
+        {
+            totalTime += Time.deltaTime;
+            yield return null;
+        }
+        gameStarted = true;
+        Think();
+        music.SetActive(true);
+        eventEmitter.Play();
+    }
 
+    public void StartGame()
+    {
+        StartCoroutine(StartWait());
+    }
 }
