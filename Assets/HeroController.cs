@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using FMODUnity;
 
 public class HeroController : MonoBehaviour
 {
-    private NavMeshAgent agent;
+    private NavMeshAgent agent;  
     public GameObject goal;
 
     // Start is called before the first frame update
@@ -19,5 +20,11 @@ public class HeroController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void Footstep()
+    {
+        RuntimeManager.PlayOneShotAttached("event:/Enemy Sounds/enemyFootsteps", gameObject);
+            
     }
 }
