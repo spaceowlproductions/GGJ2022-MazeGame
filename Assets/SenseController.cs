@@ -12,6 +12,8 @@ public class SenseController : MonoBehaviour
     public Sprite ears;
     public Sprite empty;
 
+    public GameObject SoundWorldCam;
+
     public void MouseEnter()
     {
         Debug.Log("On Portrait");
@@ -30,11 +32,13 @@ public class SenseController : MonoBehaviour
         {
             RuntimeManager.StudioSystem.setParameterByName("Listening", 0f);
             GetComponent<Image>().sprite = eyes;
+            SoundWorldCam.SetActive(false);
         }
         else
         {
             RuntimeManager.StudioSystem.setParameterByName("Listening", 1f);
             GetComponent<Image>().sprite = ears;
+            SoundWorldCam.SetActive(true);
         }
     }
 }
