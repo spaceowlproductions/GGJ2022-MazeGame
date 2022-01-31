@@ -9,8 +9,8 @@ public class LoseScript : MonoBehaviour
 
     bool losePlaying;
 
-    PlayableDirector cinematicDirector;
-    PlayableAsset lose;
+    public PlayableDirector cinematicDirector;
+    public PlayableAsset lose;
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class LoseScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) < 5 && !losePlaying)
+        if (Vector3.Distance(transform.position, player.transform.position) < 10f && !losePlaying)
         {
             cinematicDirector.Play(lose);
             losePlaying = true;

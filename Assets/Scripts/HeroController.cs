@@ -47,13 +47,15 @@ public class HeroController : MonoBehaviour
 
     public float waitTime;
 
+    bool onTrack;
+
     // Start is called before the first frame update
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.SetDestination(goal.transform.position);
         eventEmitter = GetComponent<StudioEventEmitter>();
-
+        agent.isStopped = true;
     }
 
     // Update is called once per frame
@@ -158,6 +160,11 @@ public class HeroController : MonoBehaviour
 
         int choice = Random.Range(0, walkTargets.Length);
         agent.SetDestination(walkTargets[choice].position);
+        if (walkTargets[choice].gameObject.name == "Win")
+        {
+            onTrack = true;
+            Debug.Log("He's on track!");
+        }
         Debug.Log("Hero heading toward destination ID: " + choice);
         Walk();
         yield break;
@@ -185,13 +192,13 @@ public class HeroController : MonoBehaviour
         Debug.Log("Hero has started walking.");
         agent.speed = walkSpeed;
 
-        if (heroState == HeroState.Thinking || heroState == HeroState.Tired)
-            agent.isStopped = false;
+        agent.isStopped = false;
 
         heroState = HeroState.Walking;
         anim.SetBool("Moving", true);
 
-        thought = StartCoroutine(ThinkCountdown());
+        if(!onTrack)
+            thought = StartCoroutine(ThinkCountdown());
     }
 
     public void Rest()

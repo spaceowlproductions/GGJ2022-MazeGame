@@ -5,22 +5,12 @@ using FMODUnity;
 
 public class EnemyFootsteps : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public Animator anim;
 
     public void Footstep()
     {
         RuntimeManager.PlayOneShotAttached("event:/Enemy Sounds/enemyFootsteps", gameObject);
-
+        anim.SetTrigger("Pulse");
     }
 
 }
